@@ -109,8 +109,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 1.1.1  在连续行中追加已对齐的注释    *csupport-comm-aligned*
 
 在正常模式，菜单项 'end-of-line comment' 将会在当前行追加一条注释。
-在可视模式，这个选项将会在所有已标记的行追加已对齐的注释。
-标记前面4行
+在可视模式，这个选项将会在所有已标记的行追加已对齐的注释。标记前面4行
 
   print_double_array ( double array[],
                        int    n,
@@ -142,9 +141,9 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 
 ------------------------------------------------------------------------------
 
-1.1.2  ADJUST END-OF-LINE COMMENTS                    *csupport-comm-realign*
+1.1.2  调整行尾注释                                   *csupport-comm-realign*
 
-After some changes end-of-line comments may be no longer aligned:
+在一些改动后，行尾注释可能不再整齐了：
 
   print_double_array ( double       array[],          /*  */
                        long int     n,                     /*  */
@@ -152,10 +151,9 @@ After some changes end-of-line comments may be no longer aligned:
                        char*        a_name         /*  */
                        )                        /*  */
 
-Realignment can be achieved with the menu item 'adjust end-of-line com.' In
-normal mode the comment (if any) in the current line will be aligned to the
-end-of-line comment column (see above) if possible. In visual mode the
-comments in the marked block will be aligned:
+使用菜单项'adjust end-of-line com.'可以实现重新对齐。 在正常模式下，当前行的注释
+（如果有的话）会尽可能的与行尾注释列（如下）对齐。在可视模式下，标记的块将会被
+对齐：
 
   print_double_array ( double       array[],    /*  */
                        long int     n,          /*  */
@@ -163,15 +161,14 @@ comments in the marked block will be aligned:
                        char*        a_name      /*  */
                        )                        /*  */
 
-The realignment will not be done for comments with nothing else than leading
-whitespaces. These comments are usually captions:
+只有前导空格的注释不会重新对齐，它们通常都是标题：
 
   max = other.max;                    /* the maximum value */
   len = other.len;                         /* the length        */
   /* ===== the next section ===== */
   pos = (x+y+z)/3.0;             /* the next position */
 
-After the alignment we have:
+在对齐之后：
 
   max = other.max;                              /* the maximum value */
   len = other.len;                              /* the length        */
@@ -180,39 +177,35 @@ After the alignment we have:
 
 ------------------------------------------------------------------------------
 
-1.1.3  CODE TO COMMENT                                 *csupport-code-to-comm*
+1.1.3  代码转注释                                     *csupport-code-to-comm*
 
-The marked block
+标记块
 
 xxxxxxxx
 xxxxxxxx
 xxxxxxxx
 
-will be changed by the menu item 'code->comment /**/' into the multiline
-comment (all (partially) marked lines):
+将会由菜单项 'code->comment /**/' 变成多行注释 (全部或部分标记的行)：
 
 /* xxxxxxxx
  * xxxxxxxx
  * xxxxxxxx
  */
 
-The marked block will be changed  by the menu item 'code->comment //' into the
-multiline comment
+标记块将会由菜单项 'code->comment //' 变成多行注释：
 
 //xxxxxxxx
 //xxxxxxxx
 //xxxxxxxx
 
-The menu items works also for a single line. A single line needs not to be
-marked.
+这两个菜单项也作用于单行，但没必要先标记单行。
 
 ------------------------------------------------------------------------------
 
-1.1.4  COMMENT TO CODE                                 *csupport-comm-to-code*
+1.1.4  注释转代码                                     *csupport-comm-to-code*
 
-If one (or more) complete comment (i.e. all lines belonging to the comment) is
-marked the item 'comment->code' will uncomment it.  If the following lines
-are marked
+如果标记了一行（或多行）完整的注释（比如：所有的行都属于注释），菜单项
+'comment->code' 将会取消注释，如果标记了以下行：
 
    * printf ("\n");
    */
@@ -226,7 +219,7 @@ are marked
    *  printf ("\n");
    */
 
-uncommenting will yield
+取消注释将会变成
 
    * printf ("\n");
    */
@@ -239,18 +232,16 @@ uncommenting will yield
 
   printf ("\n");
 
-The first 2 lines are only a part of a C-comment and remain unchanged.
-A C-comment can start with /* , /** or /*! .
+前两行仅仅是C注释的一部分，所以保持不变。一条C注释的开始可以是 /* ， /** 或者 /*! 。
 
-The menu item works also for a single line with a leading // . A single line
-needs not to be marked.
+这个菜单项也作用于前导为 // 的单行，但没必要先标记单行。
 
 ------------------------------------------------------------------------------
 
-1.1.5  FRAME COMMENTS, FILE HEADER, ...                  *csupport-comm-frame*
+1.1.5  FRAME COMMENTS, 文件头    , ...                  *csupport-comm-frame*
 
 Frame comments, file header comments and function, methods, class descriptions
-are read as templates from the appropriate files (see |csupport-templates|).
+are read as templates from the appropriate files (参见 |csupport-templates|).
 
 There are two file description templates (menu items 'file description (impl.)'
 and  'file description (header)', see also |csupport-templates|):
