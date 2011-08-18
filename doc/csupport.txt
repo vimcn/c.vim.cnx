@@ -90,7 +90,7 @@ keystroke.
  12.   Troubleshooting                          |csupport-troubleshooting|
  13.   Release Notes /Change Log                |csupport-release-notes|
 
-      How to add this help file to Vim's help  |add-local-help|
+       How to add this help file to Vim's help  |add-local-help|
 
 
 ==============================================================================
@@ -114,7 +114,7 @@ requirements (see|csupport-templates|).
 In NORMAL MODE, the menu item 'end-of-line comment' will append a comment to
 the current line.
 In VISUAL MODE, this item will append aligned comments to all marked lines.
-Marking the first 4 lines
+Marking the first 4 lines.
 
   print_double_array ( double array[],
                        int    n,

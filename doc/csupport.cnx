@@ -4,7 +4,7 @@ C/C++ Support                                           *c-support* *csupport*
                               插件版本 5.14
                     针对 Vim version 7.0 及其以上版本
                   作者：Fritz Mehner  <mehner@fh-swf.de>
-				  		 译者：Tiger Lee     <i.m.tiger.lee[AT]gmail.com>
+              译者：Tiger Lee     <i.m.tiger.lee[AT]gmail.com>
 
 Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编写代码。这是通过
 插入整句，惯用法，代码片断，模板和注释来完成的。并可使用一键来完成语法检查，
@@ -14,9 +14,9 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
  1.1    'Comments' 目录                         |csupport-comm|
  1.1.1   追加已对齐注释                         |csupport-comm-aligned|
  1.1.2   调整行尾注释                           |csupport-comm-realign|
- 1.1.3   Code to comment                        |csupport-code-to-comm|
- 1.1.4   Comment to code                        |csupport-comm-to-code|
- 1.1.5   Frame comments, file header, ...       |csupport-comm-frame|
+ 1.1.3   代码转注释                             |csupport-code-to-comm|
+ 1.1.4   注释转代码                             |csupport-comm-to-code|
+ 1.1.5   框注释，文件头，...                    |csupport-comm-frame|
  1.1.6   File section comments         ..       |csupport-comm-sections|
  1.1.7   Keyword comment, special comment       |csupport-comm-keyword|
  1.1.8   Tags (plugin)                          |csupport-comm-tags|
@@ -89,27 +89,27 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
  12.   Troubleshooting                          |csupport-troubleshooting|
  13.   Release Notes /Change Log                |csupport-release-notes|
 
-      How to add this help file to Vim's help  |add-local-help|
+       How to add this help file to Vim's help  |add-local-help|
 
 
 ==============================================================================
 1.  在GUI下使用  (gVim)                                  *csupport-usage-gvim*
 ==============================================================================
 
-如果看不见根菜单 'C/C++'，则可从根菜单 'Tools' 的子项 "Load C Support" 启用它。
-菜单项 "Load C Support" 同样也可用于卸载根目录 'C/C++'。
+如果看不见根菜单'C/C++'，则可从根菜单'Tools' 的子项"Load C Support"启用它。
+菜单项"Load C Support"同样也可用于卸载根目录'C/C++'。
 
 几乎所有的菜单项都会插入代码片断或注释。所有这些都包含在模板文件中，并且可以由
 用户修改以达到他们的需求(参见|csupport-templates|)。
 
 ------------------------------------------------------------------------------
-1.1  'Comments' 目录                                           *csupport-comm*
+1.1 'Comments' 目录                                            *csupport-comm*
 ------------------------------------------------------------------------------
 
-1.1.1  在连续行中追加已对齐的注释    *csupport-comm-aligned*
+1.1.1  在连续行中追加已对齐的注释                      *csupport-comm-aligned*
 
-在正常模式，菜单项 'end-of-line comment' 将会在当前行追加一条注释。
-在可视模式，这个选项将会在所有已标记的行追加已对齐的注释。标记前面4行
+在正常模式，菜单项'end-of-line comment'将会在当前行追加一条注释。
+在可视模式，这个选项将会在所有已标记的行追加已对齐的注释。标记前面4行。
 
   print_double_array ( double array[],
                        int    n,
@@ -117,7 +117,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
                        char*  arrayname
                        )
 
-并且选中 'end-of-line com'，将会产生 '/*  */'。
+并且选中'end-of-line com'，将会产生'/*  */'。
 
   print_double_array ( double array[],          /*  */
                        int    n,                /*  */
@@ -133,8 +133,8 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 
   let g:C_LineEndCommColDefault    = 45
 
-起始列也可以由菜单项 'Comments->set end-of-line com. col' 设定。只需将光标
-放置于任意列(列数显示在Vim的状态栏)并且选择这个菜单项。这个设定与缓冲区有关。
+起始列也可以由菜单项'Comments->set end-of-line com. col'设定。只需将光标放置于
+任意列(列数显示在Vim的状态栏)并且选择这个菜单项。这个设定与缓冲区有关。
 
 如果光标位于行尾，你将会被询问一个列数，因为这个位置极有可能不是想要的起始列。
 你的选择会被确认。
@@ -152,8 +152,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
                        )                        /*  */
 
 使用菜单项'adjust end-of-line com.'可以实现重新对齐。 在正常模式下，当前行的注释
-（如果有的话）会尽可能的与行尾注释列（如下）对齐。在可视模式下，标记的块将会被
-对齐：
+(如果有的话)会尽可能的与行尾注释列(如下)对齐。在可视模式下，标记的块将会被对齐：
 
   print_double_array ( double       array[],    /*  */
                        long int     n,          /*  */
@@ -177,7 +176,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 
 ------------------------------------------------------------------------------
 
-1.1.3  代码转注释                                     *csupport-code-to-comm*
+1.1.3  代码转注释                                      *csupport-code-to-comm*
 
 标记块
 
@@ -185,14 +184,14 @@ xxxxxxxx
 xxxxxxxx
 xxxxxxxx
 
-将会由菜单项 'code->comment /**/' 变成多行注释 (全部或部分标记的行)：
+将会由菜单项'code->comment /**/'变成多行注释 (全部或部分标记的行)：
 
 /* xxxxxxxx
  * xxxxxxxx
  * xxxxxxxx
  */
 
-标记块将会由菜单项 'code->comment //' 变成多行注释：
+标记块将会由菜单项'code->comment //'变成多行注释：
 
 //xxxxxxxx
 //xxxxxxxx
@@ -202,10 +201,10 @@ xxxxxxxx
 
 ------------------------------------------------------------------------------
 
-1.1.4  注释转代码                                     *csupport-comm-to-code*
+1.1.4  注释转代码                                      *csupport-comm-to-code*
 
-如果标记了一行（或多行）完整的注释（比如：所有的行都属于注释），菜单项
-'comment->code' 将会取消注释，如果标记了以下行：
+如果标记了一行(或多行)完整的注释(比如：所有的行都属于注释)，菜单项
+'comment->code'将会取消注释，如果标记了以下行：
 
    * printf ("\n");
    */
@@ -232,41 +231,39 @@ xxxxxxxx
 
   printf ("\n");
 
-前两行仅仅是C注释的一部分，所以保持不变。一条C注释的开始可以是 /* ， /** 或者 /*! 。
+前两行仅仅是C注释的一部分，所以保持不变。一条C注释的开始可以是/*，/**或者/*!。
 
-这个菜单项也作用于前导为 // 的单行，但没必要先标记单行。
+这个菜单项也作用于前导为//的单行，但没必要先标记单行。
 
 ------------------------------------------------------------------------------
 
-1.1.5  FRAME COMMENTS, 文件头    , ...                  *csupport-comm-frame*
+1.1.5  框注释，文件头，...                               *csupport-comm-frame*
 
-Frame comments, file header comments and function, methods, class descriptions
-are read as templates from the appropriate files (参见 |csupport-templates|).
+框注释、文件头注释、函数注释、方法注释和类描述注释都是从对应的文件中做为模板
+读取的。(参见 |csupport-templates|).
 
-There are two file description templates (menu items 'file description (impl.)'
-and  'file description (header)', see also |csupport-templates|):
+一共有两种类型的文件描述模板 (菜单项'file description (impl.)'和
+'file description (header)', 同样参见 |csupport-templates|)：
 
-  comment.file-description         : files *.c *.cc *.cp *.cxx *.cpp *.CPP *.c++
-                                      *.C *.i *.ii 
+  comment.file-description         : 所有 *.c, *.cc, *.cp, *.cxx, *.cpp, *.CPP,
+                                      *.c++, *.C, *.i, *.ii 
 
-  comment.file-description-header  : everything else with filetype 'c' or 'cpp'
+  comment.file-description-header  : 所有文件类型为'c'或'cpp'
 
-The appropriate template will also be included into a new file. The plugin 
-decides on the basis of the file extension. The default is shown above. You
-can change the list by setting a global variable in '~/.vimrc':
+同样，适当的模板将会被包含进一个新文件。这由插件根据文件扩展名来决定。 默认
+显示上述模板。你可以在'~/.vimrc'中设置一个全局变量来改变这个扩展名列表。
 
   au BufRead,BufNewFile  *.XYZ  set filetype=c
 
   let g:C_SourceCodeExtensions  = 'XYZ c cc cp cxx cpp CPP c++ C i ii'
 
-A new file named 'test.XYZ' will now be considered a C implementation file. 
+新文件'test.XYZ'将会被认为是一个C的实现文件。
 
 ------------------------------------------------------------------------------
 
-1.1.6  FILE SECTION COMMENTS                          *csupport-comm-sections*
+1.1.6  文件区块注释                                   *csupport-comm-sections*
 
-File section comments can be uses to separate typical C- and H-file sections
-with comments of similar appearance, e.g.
+文件区块注释可以用相似风格的注释来分隔典型的C和H文件区块，例如：
 
 /* #####   HEADER FILE INCLUDES   ################################################### */
 
@@ -274,14 +271,13 @@ with comments of similar appearance, e.g.
 
 /* #####   TYPE DEFINITIONS  -  LOCAL TO THIS SOURCE FILE   ######################### */
 
-These section comments can also be inserted using the hotkey \ccs for C/C++
-files, or \chs for H-files. These hotkeys will start the command
-'CFileSection' or 'HFileSection'  on the command line:
+在C/C++文件中，也可以使用快捷键 \ccs 来插入这些区块注释，或是在头文件中使用 \chs。
+这些快捷键会在命令栏执行'CFileSection'或'HFileSection'：
 
  :CFileSection 
  :HFileSection 
 
-Now type a <Tab> to start the selection menu to choose from.
+现在，按下<Tab>键显示选项菜单，并从中挑一个吧。
 
 ------------------------------------------------------------------------------
 
