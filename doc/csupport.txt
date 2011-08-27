@@ -304,7 +304,7 @@ Now type a <Tab> to start the selection menu to choose from.
 
 1.1.7  KEYWORD COMMENT, SPECIAL COMMENT                *csupport-comm-keyword*
 
-Keword comments are end-of-line comments:
+Keyword comments are end-of-line comments:
 
  /* :<keyword>:<date+time>:<author reference>: <arbitrary comment text> */
 
