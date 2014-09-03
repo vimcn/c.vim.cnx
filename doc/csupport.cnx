@@ -3,15 +3,15 @@
 C/C++ Support                                           *c-support* *csupport*
                               插件版本 5.14
                     针对 Vim version 7.0 及其以上版本
-                  作者：Fritz Mehner  <mehner@fh-swf.de>
-              译者：Tiger Lee     <i.m.tiger.lee[AT]gmail.com>
+                  作者: Fritz Mehner  <mehner@fh-swf.de>
+              译者: Tiger Lee     <i.m.tiger.lee[AT]gmail.com>
 
 Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编写代码。这是通过
 插入整句，惯用法，代码片断，模板和注释来完成的。并可使用一键来完成语法检查，
 编译，运行程序，运行代码检查工具或重新格式化代码。
 
- 1.    在GUI下使用                              |csupport-usage-gvim|
- 1.1    'Comments'菜单                          |csupport-comm|
+ 1.    在 GUI 下使用                            |csupport-usage-gvim|
+ 1.1    'Comments' 菜单                         |csupport-comm|
  1.1.1   追加已对齐注释                         |csupport-comm-aligned|
  1.1.2   调整行尾注释                           |csupport-comm-realign|
  1.1.3   代码转注释                             |csupport-code-to-comm|
@@ -19,26 +19,26 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
  1.1.5   框注释，文件头，...                    |csupport-comm-frame|
  1.1.6   文件区块注释...                        |csupport-comm-sections|
  1.1.7   关键字注释，特殊注释                   |csupport-comm-keyword|
- 1.1.8   标记(插件)                             |csupport-comm-tags|
+ 1.1.8   标记（插件）                           |csupport-comm-tags|
  1.1.9   日期和日期+时间                        |csupport-comm-date|
- 1.1.10  C to C++ comments and vice versa       |csupport-comm-c-cpp|
- 1.2    'Statements'菜单                        |csupport-stat|
+ 1.1.10  C 注释转 C++ 注释，反之亦然            |csupport-comm-c-cpp|
+ 1.2    'Statements' 菜单                       |csupport-stat|
  1.2.1   正常模式，插入模式                     |csupport-stat-normal-mode|
  1.2.2   可视模式                               |csupport-stat-visual-mode|
- 1.3    'Preprocessor'菜单                      |csupport-prep|
+ 1.3    'Preprocessor' 菜单                     |csupport-prep|
  1.3.1   正常模式，插入模式                     |csupport-prep-normal-mode|
  1.3.2   可视模式                               |csupport-prep-visual-mode|
- 1.3.3   Block out code with #if 0 .. #endif    |csupport-prep-if0|
- 1.3.4   Ex-commands                            |csupport-prep-ex|
- 1.4    Menu 'Idioms'                           |csupport-idioms|
- 1.4.1   Item 'function'                        |csupport-idioms-function|
- 1.4.2   for-loop control                       |csupport-idioms-for-loop|
- 1.4.3   Item 'open input file'                 |csupport-idioms-input|
- 1.4.4   Item 'open output file'                |csupport-idioms-output|
- 1.5    Menu 'Snippets'                         |csupport-snippets|
- 1.5.1   Code snippets                          |csupport-snippets|
- 1.5.2   Picking up prototypes                  |csupport-proto|
- 1.5.3   Code templates                         |csupport-templates-menu|
+ 1.3.3   用 #if 0 .. #endif 封闭代码            |csupport-prep-if0|
+ 1.3.4   外部命令                               |csupport-prep-ex|
+ 1.4    'Idioms' 菜单                           |csupport-idioms|
+ 1.4.1   'function' 项                          |csupport-idioms-function|
+ 1.4.2   for 循环控制                           |csupport-idioms-for-loop|
+ 1.4.3   'open input file' 项                   |csupport-idioms-input|
+ 1.4.4   'open output file' 项                  |csupport-idioms-output|
+ 1.5    'Snippets' 菜单                         |csupport-snippets|
+ 1.5.1   代码片断                               |csupport-snippets|
+ 1.5.2   选择原型                               |csupport-proto|
+ 1.5.3   代码模板                               |csupport-templates-menu|
  1.6    Menu 'C++'                              |csupport-c++|
  1.6.1   Normal mode, insert mode.              |csupport-c++-normal-mode|
  1.6.2   Visual mode.                           |csupport-c++-visual-mode|
@@ -59,7 +59,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
  1.7.12  Xterm size                             |csupport-run-xterm|
  1.7.13  Output redirection                     |csupport-run-output|
  1.8    Help                                    |csupport-help|
- 
+
  2.    Usage without GUI                        |csupport-usage-vim|
  3.    Hotkeys                                  |csupport-hotkeys|
  4.    Customization and configuration          |csupport-custom|
@@ -93,14 +93,14 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 
 
 ==============================================================================
-1.  在GUI下使用  (gVim)                                  *csupport-usage-gvim*
+1.  在 GUI 下使用 （gVim）                               *csupport-usage-gvim*
 ==============================================================================
 
-如果看不见根菜单'C/C++'，则可从根菜单'Tools' 的子项"Load C Support"启用它。
-菜单项"Load C Support"同样也可用于卸载根目录'C/C++'。
+如果看不见根菜单 'C/C++'，则可从根菜单 'Tools' 的子项 "Load C Support" 启用它。
+菜单项 "Load C Support" 同样也可用于卸载根目录 'C/C++'。
 
 几乎所有的菜单项都会插入代码片断或注释。所有这些都包含在模板文件中，并且可以由
-用户修改以达到他们的需求(参见|csupport-templates|)。
+用户修改以达到他们的需求（参见|csupport-templates|）。
 
 ------------------------------------------------------------------------------
 1.1 'Comments' 目录                                            *csupport-comm*
@@ -108,8 +108,9 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 
 1.1.1  在连续行中追加已对齐的注释                      *csupport-comm-aligned*
 
-在正常模式，菜单项"end-of-line comment"将会在当前行追加一条注释。
-在可视模式，这个选项将会在所有已标记的行追加已对齐的注释。标记前面4行。
+在正常模式，菜单项 "end-of-line comment" 将会在当前行追加一条注释。
+在可视模式，这个选项将会在所有已标记的行追加已对齐的注释。
+标记前面 4 行。
 
   print_double_array ( double array[],
                        int    n,
@@ -117,7 +118,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
                        char*  arrayname
                        )
 
-并且选中'end-of-line com'，将会产生'/*  */'。
+并且选中 'end-of-line com'，将会产生 '/*  */'。
 
   print_double_array ( double array[],          /*  */
                        int    n,                /*  */
@@ -128,13 +129,13 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 如果有一行或多行超过起始列，注释将会在最长那行之后的第二列开始。光标将会放置
 在第一条注释里。
 
-默认的起始列是 49 ( = (2，4或8的倍数) + 1 )。这个值可以在文件 ~/.vimrc 中
-设定一个全局变量来改变，例如：
+默认的起始列是 49 （ = （2，4 或 8 的倍数）+ 1）。这个值可以在文件 ~/.vimrc 中
+设定一个全局变量来改变，如:
 
   let g:C_LineEndCommColDefault    = 45
 
-起始列也可以由菜单项'Comments->set end-of-line com. col'设定。只需将光标放置于
-任意列(列数显示在Vim的状态栏)并且选择这个菜单项。这个设定与缓冲区有关。
+起始列也可以由菜单项 'Comments->set end-of-line com. col' 设定。只需将光标放置
+于任意列（列数显示在Vim的状态栏）并且选择这个菜单项。这个设定与缓冲区有关。
 
 如果光标位于行尾，你将会被询问一个列数，因为这个位置极有可能不是想要的起始列。
 你的选择会被确认。
@@ -143,7 +144,7 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
 
 1.1.2  调整行尾注释                                   *csupport-comm-realign*
 
-在一些改动后，行尾注释可能不再整齐了：
+在一些改动后，行尾注释可能不再整齐了:
 
   print_double_array ( double       array[],          /*  */
                        long int     n,                     /*  */
@@ -151,8 +152,9 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
                        char*        a_name         /*  */
                        )                        /*  */
 
-使用菜单项'adjust end-of-line com.'可以实现重新对齐。 在正常模式下，当前行的注释
-(如果有的话)会尽可能的与行尾注释列(如下)对齐。在可视模式下，标记的块将会被对齐：
+使用菜单项 'adjust end-of-line com.' 可以实现重新对齐。 在正常模式下，当前行的
+注释（如果有的话）会尽可能的与行尾注释列（如下）对齐。在可视模式下，标记的块会
+被对齐:
 
   print_double_array ( double       array[],    /*  */
                        long int     n,          /*  */
@@ -160,14 +162,14 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
                        char*        a_name      /*  */
                        )                        /*  */
 
-只有前导空格的注释不会重新对齐，它们通常都是标题：
+只有前导空格的注释不会重新对齐，它们通常都是标题:
 
   max = other.max;                    /* the maximum value */
   len = other.len;                         /* the length        */
   /* ===== the next section ===== */
   pos = (x+y+z)/3.0;             /* the next position */
 
-在对齐之后：
+在对齐之后:
 
   max = other.max;                              /* the maximum value */
   len = other.len;                              /* the length        */
@@ -184,14 +186,14 @@ xxxxxxxx
 xxxxxxxx
 xxxxxxxx
 
-将会由菜单项'code->comment /**/'变成多行注释 (全部或部分标记的行)：
+将会由菜单项 'code->comment /**/' 变成多行注释（全部或部分标记的行）:
 
 /* xxxxxxxx
  * xxxxxxxx
  * xxxxxxxx
  */
 
-标记块将会由菜单项'code->comment //'变成多行注释：
+标记块将会由菜单项 'code->comment //' 变成多行注释:
 
 //xxxxxxxx
 //xxxxxxxx
@@ -203,8 +205,8 @@ xxxxxxxx
 
 1.1.4  注释转代码                                      *csupport-comm-to-code*
 
-如果标记了一行(或多行)完整的注释(比如：所有的行都属于注释)，菜单项
-"comment->code"将会取消注释，如果标记了以下行：
+如果标记了一行（或多行）完整的注释（如:所有的行都属于注释），菜单项
+"comment->code" 将会取消注释，如果标记了以下行:
 
    * printf ("\n");
    */
@@ -231,39 +233,40 @@ xxxxxxxx
 
   printf ("\n");
 
-前两行仅仅是C注释的一部分，所以保持不变。一条C注释的开始可以是/*，/**或者/*!。
+前两行仅仅是 C 注释的一部分，所以保持不变。一条 C 注释的开始可以是 /*，/** 或者
+/*!。
 
-这个菜单项也作用于前导为//的单行，但没必要先标记单行。
+这个菜单项也作用于前导为 // 的单行，但没必要先标记单行。
 
 ------------------------------------------------------------------------------
 
 1.1.5  框注释，文件头，...                               *csupport-comm-frame*
 
 框注释、文件头注释、函数注释、方法注释和类描述注释都是从对应的文件中做为模板
-读取的。(参见 |csupport-templates|).
+读取的。（参见 |csupport-templates|）。
 
-一共有两种类型的文件描述模板 (菜单项"file description (impl.)"和
-"file description (header)", 同样参见 |csupport-templates|)：
+一共有两种类型的文件描述模板（菜单项 "file description (impl.)" 和
+"file description (header)"，同样参见 |csupport-templates|）:
 
-  comment.file-description         : 所有 *.c, *.cc, *.cp, *.cxx, *.cpp, *.CPP,
-                                      *.c++, *.C, *.i, *.ii 
+  comment.file-description         : 文件 *.c, *.cc, *.cp, *.cxx, *.cpp, *.CPP,
+                                      *.c++, *.C, *.i, *.ii
 
-  comment.file-description-header  : 所有文件类型为'c'或'cpp'
+  comment.file-description-header  : 所有文件类型为 'c' 或 'cpp'
 
-同样，适当的模板将会被包含进一个新文件。这由插件根据文件扩展名来决定。 默认
-显示上述模板。你可以在'~/.vimrc'中设置一个全局变量来改变这个扩展名列表。
+同样，适当的模板将会被包含进一个新文件。这由插件根据文件扩展名来决定。默认
+显示上述模板。你可以在 '~/.vimrc' 中设置一个全局变量来改变这个扩展名列表。
 
   au BufRead,BufNewFile  *.XYZ  set filetype=c
 
   let g:C_SourceCodeExtensions  = 'XYZ c cc cp cxx cpp CPP c++ C i ii'
 
-新文件'test.XYZ'将会被认为是一个C的实现文件。
+新文件 'test.XYZ' 将会被认为是一个 C 的实现文件。
 
 ------------------------------------------------------------------------------
 
 1.1.6  文件区块注释                                   *csupport-comm-sections*
 
-文件区块注释可以用相似风格的注释来分隔典型的C和H文件区块，例如：
+文件区块注释可以用相似风格的注释来分隔典型的 C 和 H 文件区块，如:
 
 /* #####   HEADER FILE INCLUDES   ################################################### */
 
@@ -271,83 +274,83 @@ xxxxxxxx
 
 /* #####   TYPE DEFINITIONS  -  LOCAL TO THIS SOURCE FILE   ######################### */
 
-在C/C++文件中，也可以使用快捷键 \ccs 来插入这些区块注释，或是在头文件中使用 \chs。
-这些快捷键会在命令栏执行'CFileSection'或'HFileSection'：
+在 C/C++ 文件中，也可以使用快捷键 \ccs 来插入这些区块注释，或是在头文件中使用 \chs。
+这些快捷键会在命令栏执行 'CFileSection' 或 'HFileSection':
 
- :CFileSection 
- :HFileSection 
+ :CFileSection
+ :HFileSection
 
-现在，按下<Tab>键显示选项菜单，并从中挑一个吧。
+现在，按下 <Tab> 键显示选项菜单，并从中挑一个吧。
 
 ------------------------------------------------------------------------------
 
 1.1.7  关键字注释，特殊注释                            *csupport-comm-keyword*
 
-关键字注释是行尾注释：
+关键字注释是行尾注释:
 
  /* :<关键字>:<date+time>:<author reference>: <arbitrary comment text> */
 
-关键字包括：
+关键字包括:
 
  BUG COMPILER TODO TRICKY WARNING WORKAROUND 用户自定义关键字
 
 这些预备注释是用于标注快速恢复工作的位置。它们通常意味着不是为了最终文档。这些
 注释可以很容易地通过关键字搜索到。
-关键字注释也可以使用快捷键\ckc。这个快捷键会在命令栏运行命令"KeywordComment"：
+关键字注释也可以使用快捷键 \ckc。这个快捷键会在命令栏运行命令 "KeywordComment":
 
  :KeywordComment
 
-现在按下<Tab>调出选择菜单来挑一个。
+现在按下 <Tab> 调出选择菜单来挑一个。
 
-特别注释偶尔用于在一段代码构成中注明特别的特性(例如：在一个switch语句中失败的情况，
-一个空循环)：
+特别注释偶尔用于在一段代码构成中注明特别的特性（如:在一个switch语句中失败的
+情况， 一个空循环）:
 
  /* EMPTY */
  /* NOT REACHED */
  /* REMAINS TO BE IMPLEMENTED */
   ....
 
-特殊注释也可以使用快捷键\csc。这个快捷键会在命令栏运行命令"KeywordComment"：
+特殊注释也可以使用快捷键 \csc。这个快捷键会在命令栏运行命令 "KeywordComment":
 
  :SpecialComment
 
-现在按下<Tab>调出选择菜单来挑一个。
+现在按下 <Tab> 调出选择菜单来挑一个。
 
 ------------------------------------------------------------------------------
 
 1.1.8  标签 (插件)                                        *csupport-comm-tags*
 
-'tags (plugin)'子菜单可以让你从模板系统(see|csupport-templates-macros|)插入
-预定义的宏 template system (参见|csupport-templates-macros|). 在可视模式下，
+'tags (plugin)' 子菜单可以让你从模板系统（参见 |csupport-templates-macros|）插入
+预定义的宏 template system（参见 |csupport-templates-macros|）。在可视模式下，
 宏会替换被标记的文本。
 
 ------------------------------------------------------------------------------
 
 1.1.9  日期和日期+时间                                    *csupport-comm-date*
 
-'date'和'date time'可以由用户来定义(参见|csupport-templates-date|)。在可视
-模式下，宏会替换被标记的文本。(例如：更新日期和时间)。
+'date' 和 'date time' 可以由用户来定义（参见 |csupport-templates-date|）。在可视
+模式下，宏会替换被标记的文本（如: 更新日期和时间）。
 
 ------------------------------------------------------------------------------
 
-1.1.10 C注释转C++注释， AND VICE VERSA                  *csupport-comm-c-cpp*
+1.1.10 C 注释转 C++ 注释，反之亦然                       *csupport-comm-c-cpp*
 
-菜单项"// xxx -> /* xxx */"将C++注释转换成C注释。这可以在正常模式或插入模式的
-当前行和可视模式的标记块中完成。
-如果有多个C注释，则只有第一个会被转换：
+菜单项 "// xxx -> /* xxx */" 将 C++ 注释转换成 C 注释。这可以在正常模式或插入模
+式的 当前行和可视模式的标记块中完成。
+如果有多个 C 注释，则只有第一个会被转换:
   printf ("\n");                     /* one */ /* two */ /* three */
 会变成
   printf ("\n");                     // one  /* two */ /* three */
 
-菜单项"/* xxx */ -> // xxx"将C注释转换成C++注释。
+菜单项 "/* xxx */ -> // xxx" 将 C 注释转换成 C++ 注释。
 
 ------------------------------------------------------------------------------
-1.2  'Statements'菜单                                          *csupport-stat*
+1.2  'Statements' 菜单                                          *csupport-stat*
 ------------------------------------------------------------------------------
 
 1.2.1  正常模式，插入模式                          *csupport-stat-normal-mode*
 
-将会插入一条空语句并适当缩进。菜单项"if{}"将会插入一条if语句：
+将会插入一条空语句并适当缩进。菜单项 "if{}" 将会插入一条 if 语句:
 
 if (  )
 {
@@ -356,14 +359,14 @@ if (  )
 
 1.2.2  可视模式                                    *csupport-stat-visual-mode*
 
-带代码块的语句和case标签
+带代码块的语句和 case 标签
 --------------------------------------
 高亮区域
 
 xxxxx
 xxxxx
 
-将会被以下语句之一环绕：
+将会被以下语句之一环绕:
 
   +----------------------------+-----------------------------+
   |     if (  )                |     if (  )                 |
@@ -425,7 +428,7 @@ xxxxx
 
 
 ------------------------------------------------------------------------------
-1.3  'Preprocessor'菜单                                        *csupport-prep*
+1.3  'Preprocessor' 菜单                                        *csupport-prep*
 ------------------------------------------------------------------------------
 
 1.3.1  正常模式，插入模式                          *csupport-prep-normal-mode*
@@ -441,7 +444,7 @@ xxxxx
 xxxxx
 xxxxx
 
-将会被以下语句之一环绕：
+将会被以下语句之一环绕:
 
   +----------------------------+-----------------------------+
   |    #if  CONDITION                                        |
@@ -476,11 +479,11 @@ xxxxx
   |    #endif     /* ----- #if 0 : If0Label_1 ----- */       |
   +----------------------------------------------------------+
 
-作为一个建议，包含防护的宏名字(如上INC_TEST)将由文件名得来。
+作为一个建议，包含防护的宏名字（如上 INC_TEST）将由文件名得来。
 
-1.3.3  用"#if 0 ... #endif"封闭代码                        *csupport-prep-if0*
+1.3.3  用 "#if 0 ... #endif" 封闭代码                      *csupport-prep-if0*
 
-菜单项"#if 0 #endif"插入行
+菜单项 "#if 0 #endif" 插入行
 
   #if  0     /* ----- #if 0 : If0Label_1 ----- */
 
@@ -488,43 +491,41 @@ xxxxx
 
 在可视模式下，标记的代码块会被这些行包围。
 
-这通常用来暂时封闭一些代码。像标签名If0Label_1是自动插入到代码中的。尾部的数字
+这通常用来暂时封闭一些代码。像标签名 If0Label_1 是自动插入到代码中的。尾部的数字
 是自动递增的。用户可以修改这些数字。下一个数字将会比当前缓冲区中最大的数字还要
 大一。
 
-对应的标签可以使用vim的星号命令(*)来搜索到。所有的标签都可以使用全局搜索，像
-:g/If0Label_/或:g/If0Label_\d\+/。所有对应的行都可以使用:g/If0Label_/d删除。
+对应的标签可以使用 vim 的星号命令（*）来搜索到。所有的标签都可以使用全局搜索，像
+:g/If0Label_/ 或 :g/If0Label_\d\+/ 。所有对应的行都可以使用 :g/If0Label_/d删除。
 
 
-去除包围结构"#if 0 ... #endif"
+去除包围结构 "#if 0 ... #endif"
 
-如果光标位于这样的段落中间或者在邻近的两行之上，菜单项'remove #if #endif'将
-会删除这个结构。原生的结构不会受到影响。
+如果光标位于这样的段落中间或者在邻近的两行之上，菜单项 'remove #if #endif' 将会
+删除这个结构。原生的结构不会受到影响。
 
-1.3.4  额外命令                                          *csupport-prep-ex*
+1.3.4  外部命令                                         *csupport-prep-ex*
 
-有4个附加的额外命令可以用来插入包含语句:
+有 4 个附加的外部命令可以用来插入包含语句:
 
- 额外命令               快捷键     包含
+ 外部命令               快捷键     包含
  -------------------------------------------------------------------------
  :IncludeStdLibrary     \ps        C 标准库
  :IncludeC99Library     \pc        C99 库
  :IncludeCppLibrary     \+ps       C++ 标准库
  :IncludeCppCLibrary    \+pc       C 标准库 ( #include <c...> )
 
-Type :Inc<Tab> and choose one of the commands. Now type an additional space
-and a <Tab> to show the whole list list or type a space and a few leading
-characters to reduce this list.
+键入 :Inc<Tab> 来选择一个命令。现在，键入一个额外的空格和一个 <Tab> 来显示全部
+列表或是键入一个空格和几个首字符以减小这个列表。
 
 ------------------------------------------------------------------------------
-1.4  MENU 'Idioms'                                           *csupport-idioms*
+1.4  'Idioms' 目录                                           *csupport-idioms*
 ------------------------------------------------------------------------------
 
-1.4.1  Item 'function'                              *csupport-idioms-function*
+1.4.1  'function' 项                                *csupport-idioms-function*
 
-NORMAL MODE, INSERT MODE:
-The name of the function is asked for and the following lines (for function
-name "f") will be inserted:
+正常模式，插入模式:
+提供函数名字后，以下行（用于函数名 "f"）将会插入。
 
   void
   f (  )
@@ -532,21 +533,18 @@ name "f") will be inserted:
     return ;
   }        /* ----------  end of function f  ---------- */
 
-VISUAL MODE:
-Main or [static] function: the highlighted lines will go inside the new
-function or main.
-for-loops: the highlighted lines will be set in braces.
+可视模式:
+Main 或 [ 静态 ] 函数: 高亮行会在新函数或 main 函数里面。
+for 循环: 高亮行会放在花括号内。
 
-1.4.2  for-loop control                             *csupport-idioms-for-loop*
+1.4.2  for 循环控制                               *csupport-idioms-for-loop*
 
-The menu items 'for( x=0; ... )' and 'for( x=n-1; ... )' can be used to write
-the control statement for a for-loop counting upward or downward. These items
-start an input dialog
+目录项 'for( x=0; ... )' 和 'for( x=n-1; ... )' 可以用来为 for 循环的正向或
+反向计数写一个控制语句。这些目录项会打开一个输入对话框
 
  [TYPE (expand)] VARIABLE [START [END [INCR.]]] :
 
-asking for at least the name of the loop variable. The other parameters are
-optional. The type is restricted to the following integral data types:
+至少要提供循环变量名。其它参数为可选。类型被限制为以下整数数据类型:
 
   char
   int
@@ -557,7 +555,7 @@ optional. The type is restricted to the following integral data types:
   short
   short int
   size_t
-  unsigned 
+  unsigned
   unsigned char
   unsigned int
   unsigned long
@@ -567,65 +565,58 @@ optional. The type is restricted to the following integral data types:
   unsigned short
   unsigned short int
 
-One of these types can be specified by typing it completely or by typing zero
-or more characters of its name and completing them to the full name by using
-the tab key (tab completion). If the start of the type name is ambiguous (e.g.
-'uns') a list of completion candidates is provided to choose from.
+任一类型都可以通过键入全部类型名，0 个或多个字符，然后使用 <Tab> 键来补全。
+如果类型名的开头是有歧义的 (如: 'uns')，可以通过提供的候选补全列表来选择。
 
-1.4.3  Item 'open input file'                          *csupport-idioms-input*
+1.4.3  'open input file' 项                           *csupport-idioms-input*
 
-The item 'open input file' will create the statements to open and close an
-input file (e.g. with the file pointer 'infile').
+'open input file' 会创建语句来打开和关闭输入文件（如: 通过文件指针 'infile'）。
 
-1.4.4  Item 'open output file'                        *csupport-idioms-output*
+1.4.4  'open output file' 项                         *csupport-idioms-output*
 
-The item 'open output file' will create the statements to open and close an
-output file (e.g. with the file pointer 'outfile').
+'open output file' 会创建语句来打开和关闭输出文件（如: 通过文件指针 'outfile'）。
 
 ------------------------------------------------------------------------------
-1.5  MENU 'Snippets'                                       *csupport-snippets*
+1.5  'Snippets' 菜单                                       *csupport-snippets*
 ------------------------------------------------------------------------------
 
-1.5.1  CODE SNIPPETS
+1.5.1  代码片断
 
-Code snippets are pieces of code which are kept in separate files in a special
-directory (e.g. a few lines of code or a complete template for a Makefile).
-File names are used to identify the snippets.  The snippet directory will be
-created during the installation  ( $HOME/.vim/codesnippets-c is the default).
-Snippets are managed with the 3 items
+代码片断就是一小部分代码，以独立文件的形式保存在特定目录下（如: 几行代码或一个
+Makefile 的完全模板）。
+文件名是用于区分这些代码片断。片断目录在安装过程中创建（默认值为
+$HOME/.vim/codesnippets-c）。
+片断由 Snippets 子目录下的 3 个目录项管理。
 
    C/C++ -> Snippets -> read  code snippet
    C/C++ -> Snippets -> write code snippet
    C/C++ -> Snippets -> edit  code snippet
 
-from the Snippets submenu.
 
-CREATING A NEW SNIPPET
-When nothing is marked, "write code snippet" will write the whole buffer
-to a snippet file, otherwise the marked area will be written to a file.
+创建新代码片断
+如果没有标记区域，"write code snippet" 将整个缓冲区写入到一个片断文件，否则只有
+标记的区域会被写入文件。
 
-INSERT A SNIPPET
-Select the appropriate file from the snippet directory ("read  code snippet").
-The inserted lines will be indented.
+插入代码片断
+从片断目录（"read code snippet"）选择相应的文件，插入的行会自动缩进。
 
-EDIT A SNIPPET
-This is a normal edit.
+编辑代码片断
+这是一个正常的文本编辑。
 
-INDENTATION / NO INDENTATION
-Code snippets are normally indented after insertion. To suppress indentation
-add the file extension "ni" or "noindent" to the snippet file name, e.g.
+缩进 / 不缩进
+代码片断通常会在插入后缩进。为了阻止缩进，在缩进文件名后增加扩展名 "ni" 或
+"noindent"，如
 
   parameter_handling.c.noindent
 
-Snippet browser
+片断浏览器
 ---------------
-Under a GUI a file requester will be put up. Without GUI the filename will be
-read from the command line. You can change this behavior by setting a global
-variable in your ~/.vimrc :
+在图形界面下，会打开一个文件对话框。没有图形界面的话，会从命令行读取文件名。你
+可以通过在你的 ~/.vimrc 中设置一个全局变量来改变这个行为。
 
  let g:C_GuiSnippetBrowser = 'commandline'
 
-The default value is 'gui'. 
+默认值是 'gui'。
 
 
 1.5.2   PICKING UP PROTOTYPES                                 *csupport-proto*
@@ -1183,7 +1174,7 @@ plugin package) and described in the document c-hot-keys.pdf
 Changing the default map leader '\'
 -----------------------------------
 The map leader can be changed by the user by setting a global variable in the
-file .vimrc 
+file .vimrc
 
  let g:C_MapLeader  = ','
 
@@ -1217,7 +1208,7 @@ source file the file ~/.vimrc should contain a line
 A header file will only be opened if it already exists.
 
 The Shift-key is dead when you are working with Vim in a console terminal
-(non-Gui). You could add 
+(non-Gui). You could add
 
   noremap   \a        :A<CR>
  inoremap   \a   <C-C>:A<CR>
@@ -1304,8 +1295,8 @@ The variable plugin_dir will automatically be set to one of the following values
            g:C_Printheader        : hardcopy: definition of the page header
            g:C_MapLeader          : the map leader for hotkeys (see|csupport-usage-vim|)
            g:C_GuiSnippetBrowser  : code snippet browser: 'gui', 'commandline'
-           g:C_GuiTemplateBrowser : code template browser: 'gui', 'explorer', 'commandline' 
- 
+           g:C_GuiTemplateBrowser : code template browser: 'gui', 'explorer', 'commandline'
+
  3. group: g:C_CExtension             : Extension of C files. Everything else is C++.
            g:C_TypeOfH                : filetype of header files with extension 'h' (c,cpp)
            g:C_SourceCodeExtensions   : filename extensions for C/C++
@@ -1339,7 +1330,7 @@ The default is
 
   '&C\/C\+\+.'
                   ''
-Note the terminating dot. 
+Note the terminating dot.
 
 If you want to set the plugin root menu into another menu, e.g. 'Plugin',
 this is done by the following line in '.vimrc'
@@ -1793,14 +1784,14 @@ There are four macro types which can be used as jump targets in templates:
  <+text+>   Can be jumped to by hitting Ctrl-j.
  {+text+}   Same as <+text+>. Used in cases where indentation gives unwanted
             results with the first one.
- 
+
  <-text->   Same as the two above. Will be removed if the template is used
  {-text-}   in visual mode.
 
 The text inside the brackets is userdefined and can be empty. The text
 can be composed from letters (uppercase and lowercase), digits, underscores
 and blanks. After the insertion of an template these jump targets will be
-highlighted. 
+highlighted.
 
 5.3.5  Command Ctrl-j                                        *csupport-Ctrl-j*
 
@@ -1817,7 +1808,7 @@ The template for a function can be written as follows:
  <SPLIT>  return <+return value+>;
  }    /* -----  end of function |FUNCTION_NAME|  ----- */
 
-The cursor will be set behind 'void'. You can remove 'void' easily with 
+The cursor will be set behind 'void'. You can remove 'void' easily with
 Ctrl-w (delete word before cursor) and insert a new type. A Ctrl-j leads you
 to the argument list. The target disappears and you can type on. When the
 function body is written a final Ctrl-j brings you to the return statement.
@@ -1834,7 +1825,7 @@ indentation will be correct.
  == cpp.open-input-file ==
  char *ifs_file_name = "<CURSOR>";    /* input  file name       */
  ifstream ifs;              /* create ifstream object */
- 
+
  ifs.open (ifs_file_name);    /* open ifstream          */
  if (!ifs) {
   cerr << "\nERROR : failed to open input  file " << ifs_file_name << endl;
@@ -1861,7 +1852,7 @@ can switch them off.  Put the following line in the file .vimrc :
 
 The default value of g:C_Ctrl_j is 'on'. You do not have to change the
 template files. All jump targets will be removed before a template will be
-inserted. 
+inserted.
 
 ==============================================================================
 5.4  SWITCHING BETWEEN TEMPLATE SETS                 *csupport-templates-sets*
@@ -1896,7 +1887,7 @@ IF-ENDIF-construct to choose a particular set of files for example:
 The syntax is as follows:
 
   == IF macro_name IS macro_value  ==
-   
+
   == ENDIF ==
 
 Includes outside an IF-ENDIF construct are associated with the default style
@@ -2038,7 +2029,7 @@ Now add the following lines to the file $HOME/.vimrc :
 
   let tlist_template_settings  = 'template;t:template'
   "---------------------------------------------------------------
-  " plugin templates : set filetype for *.template  
+  " plugin templates : set filetype for *.template
   "---------------------------------------------------------------
   if has("autocmd")
     autocmd BufNewFile,BufRead Templates  set filetype=template
@@ -2070,7 +2061,7 @@ and a warning will be shown.
 Visual mode
 -----------
 A range of lines containing closed folds can be surrounded by constructs which
-have a visual mode, e.g. a for-loop: 
+have a visual mode, e.g. a for-loop:
 
     for ( ; ; ) {
   +---  4 lines: {------------------------------------------------------------
@@ -2087,7 +2078,7 @@ There are a few additional filetype specific key mappings defined in
 
 Complete a classical C comment: '/*' => '/* | */' (modes: i,v).
 
-Complete a classical C multi-line comment (mode: i): 
+Complete a classical C multi-line comment (mode: i):
   '/*<CR>' =>  /*
                 * |
                 */
@@ -2102,7 +2093,7 @@ In visual mode the content of the new block will be indented.
 10.  WINDOWS PARTICULARITIES                                *csupport-windows*
 ==============================================================================
 
-For a user installation the plugin should go into the directory structure below 
+For a user installation the plugin should go into the directory structure below
   $HOME/vimfiles/
 for a system installation below
   $VIM/vimfiles/
