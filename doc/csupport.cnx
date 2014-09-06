@@ -6,7 +6,7 @@ C/C++ Support                                           *c-support* *csupport*
                   作者: Fritz Mehner  <mehner@fh-swf.de>
               译者: Tiger Lee     <i.m.tiger.lee[AT]gmail.com>
 
-Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编写代码。这是通过
+Vim/gVim 的 C/C++-IDE。开发它是为了极为迅速地以一致的风格来编写代码。这是通过
 插入整句，惯用法，代码片断，模板和注释来完成的。并可使用一键来完成语法检查，
 编译，运行程序，运行代码检查工具或重新格式化代码。
 
@@ -39,57 +39,56 @@ Vim/gVim的C/C++-IDE。开发它是为了极为迅速地以一致的风格来编
  1.5.1   代码片断                               |csupport-snippets|
  1.5.2   选择原型                               |csupport-proto|
  1.5.3   代码模板                               |csupport-templates-menu|
- 1.6    Menu 'C++'                              |csupport-c++|
- 1.6.1   Normal mode, insert mode.              |csupport-c++-normal-mode|
- 1.6.2   Visual mode.                           |csupport-c++-visual-mode|
- 1.6.3   Method implementation                  |csupport-c++-method-impl|
- 1.6.4  Ex commands                             |csupport-c++-ex|
- 1.7    Menu 'Run'                              |csupport-run|
- 1.7.1   Minimal make functionality             |csupport-run-buffer|
- 1.7.2   Command line arguments                 |csupport-run-cmdline-args|
- 1.7.3   Run make                               |csupport-run-make|
- 1.7.4   Executable to run                      |csupport-run-make-run|
- 1.7.5   Run make clean                         |csupport-run-make-clean|
- 1.7.6   Command line arguments for make        |csupport-run-make-args|
+ 1.6    'C++' 菜单                              |csupport-c++|
+ 1.6.1   正常模式，插入模式                     |csupport-c++-normal-mode|
+ 1.6.2   可视模式                               |csupport-c++-visual-mode|
+ 1.6.3   方法实现                               |csupport-c++-method-impl|
+ 1.6.4  外部命令                                |csupport-c++-ex|
+ 1.7    'Run' 菜单                              |csupport-run|
+ 1.7.1   最小 make 功能                         |csupport-run-buffer|
+ 1.7.2   命令行参数                             |csupport-run-cmdline-args|
+ 1.7.3   运行 make                              |csupport-run-make|
+ 1.7.4   运行可执行程序                         |csupport-run-make-run|
+ 1.7.5   运行 make clean                        |csupport-run-make-clean|
+ 1.7.6   make 命令行参数                        |csupport-run-make-args|
  1.7.7   Splint                                 |csupport-run-splint|
- 1.7.8   CodeCheck                              |csupport-run-codecheck|
- 1.7.9   Indent                                 |csupport-run-indent|
- 1.7.10  Hardcopy                               |csupport-run-hardcopy|
- 1.7.11  Rebuild templates                      |csupport-run-templates|
- 1.7.12  Xterm size                             |csupport-run-xterm|
- 1.7.13  Output redirection                     |csupport-run-output|
- 1.8    Help                                    |csupport-help|
+ 1.7.8   代码检查                               |csupport-run-codecheck|
+ 1.7.9   缩进                                   |csupport-run-indent|
+ 1.7.10  硬拷贝                                 |csupport-run-hardcopy|
+ 1.7.11  重新构建模板                           |csupport-run-templates|
+ 1.7.12  Xterm 大小                             |csupport-run-xterm|
+ 1.7.13  输出重定向                             |csupport-run-output|
+ 1.8    帮助                                    |csupport-help|
+ 2.    没有 GUI 时的用法                        |csupport-usage-vim|
+ 3.    快捷键                                   |csupport-hotkeys|
+ 4.    定制和配置                               |csupport-custom|
+ 4.1    全局变量                                |csupport-custom-glob-vars|
+ 4.2     根目录                                 |csupport-custom-root|
+ 4.3     系统级安装                             |csupport-system-wide|
+ 5.    模板和 tags                              |csupport-templates|
+ 5.1    模板文件                                |csupport-templates-files|
+ 5.2    宏                                      |csupport-templates-macros|
+ 5.2.1  用户定义格式的日期和时间                |csupport-templates-date|
+ 5.3    模板                                    |csupport-templates-names|
+ 5.3.1  模板名                                  |csupport-templates-names|
+ 5.3.2  模板定义                                |csupport-templates-definition|
+ 5.3.3  模板展开                                |csupport-templates-expansion|
+ 5.3.4  宏 <+text+> 及其它                      |csupport-templates-jump|
+ 5.3.5  Ctrl-j 命令                             |csupport-Ctrl-j|
+ 5.4    模板集间切换                            |csupport-templates-sets|
+ 5.5    绑定风格到扩展名                        |csupport-templates-bind|
+ 6.    C/C++ 字典                               |csupport-dictionary|
+ 7.    扩展 ctags                               |csupport-ctags|
+ 7.1   Make 和 qmake                            |csupport-ctags-make|
+ 7.2   模板                                     |csupport-ctags-templates|
+ 8.    代码折叠                                 |csupport-folding|
+ 9     额外映射                                 |csupport-ad-mappings|
+ 10.   Windows 特性                             |csupport-windows|
+ 11.   额外提示                                 |csupport-tips|
+ 12.   问题排除                                 |csupport-troubleshooting|
+ 13.   发布注解 / 变更日志                      |csupport-release-notes|
 
- 2.    Usage without GUI                        |csupport-usage-vim|
- 3.    Hotkeys                                  |csupport-hotkeys|
- 4.    Customization and configuration          |csupport-custom|
- 4.1    Global variables                        |csupport-custom-glob-vars|
- 4.2     The root menu                          |csupport-custom-root|
- 4.3     System-wide installation               |csupport-system-wide|
- 5.    Template files and tags                  |csupport-templates|
- 5.1    Template files                          |csupport-templates-files|
- 5.2    Macros                                  |csupport-templates-macros|
- 5.2.1  User defined formats for date and time  |csupport-templates-date|
- 5.3    Templates                               |csupport-templates-names|
- 5.3.1  Template names                          |csupport-templates-names|
- 5.3.2  Template definition                     |csupport-templates-definition|
- 5.3.3  Template expansion                      |csupport-templates-expansion|
- 5.3.4  The macros <+text+> etc.                |csupport-templates-jump|
- 5.3.5  Command Ctrl-j                          |csupport-Ctrl-j|
- 5.4    Switching between template sets         |csupport-templates-sets|
- 5.5    Binding a style to a file extension     |csupport-templates-bind|
- 6.    C/C++ Dictionaries                       |csupport-dictionary|
- 7.    Extend ctags                             |csupport-ctags|
- 7.1   Make and qmake                           |csupport-ctags-make|
- 7.2   Templates                                |csupport-ctags-templates|
- 8.    Folding                                  |csupport-folding|
- 9     Additional Mappings                      |csupport-ad-mappings|
- 10.   Windows particularities                  |csupport-windows|
- 11.   Additional tips                          |csupport-tips|
- 12.   Troubleshooting                          |csupport-troubleshooting|
- 13.   Release Notes /Change Log                |csupport-release-notes|
-
-       How to add this help file to Vim's help  |add-local-help|
+       怎样把这个帮助文件加入到 Vim 的帮助中    |add-local-help|
 
 
 ==============================================================================
@@ -539,7 +538,7 @@ for 循环: 高亮行会放在花括号内。
 
 1.4.2  for 循环控制                               *csupport-idioms-for-loop*
 
-目录项 'for( x=0; ... )' 和 'for( x=n-1; ... )' 可以用来为 for 循环的正向或
+菜单项 'for( x=0; ... )' 和 'for( x=n-1; ... )' 可以用来为 for 循环的正向或
 反向计数写一个控制语句。这些目录项会打开一个输入对话框
 
  [TYPE (expand)] VARIABLE [START [END [INCR.]]] :
@@ -611,19 +610,23 @@ $HOME/.vim/codesnippets-c）。
 
 片断浏览器
 ---------------
-在图形界面下，会打开一个文件对话框。没有图形界面的话，会从命令行读取文件名。你
-可以通过在你的 ~/.vimrc 中设置一个全局变量来改变这个行为。
+在 GUI 下会提供一个打开文件对话框。没有 GUI 则会从命令行读取文件名。你可以通过
+在你的 ~/.vimrc 中设置一个全局变量来改变这个行为。
 
  let g:C_GuiSnippetBrowser = 'commandline'
 
 默认值是 'gui'。
 
 
-1.5.2   PICKING UP PROTOTYPES                                 *csupport-proto*
+1.5.2   原型拾取                                              *csupport-proto*
 
-PICK UP PROTOTYPES.
-To make a prototype from a function head mark the function head and choose
-'Snippets -> pick up prototype'. From the first six lines of
+原型拾取。
+根据函数头部来做一个原型，标记函数头，选择 'Snippets -> pick up prototype'。
+原型
+
+  void print_double_array ( double array[], int n, int columns, char* arrayname );
+
+的前六行
 
    void
   print_double_array (  double array[],  /* array to print                */
@@ -635,21 +638,16 @@ To make a prototype from a function head mark the function head and choose
     ...
   }       /* ----------  end of function print_double_array  ---------- */
 
-the prototype
 
-  void print_double_array ( double array[], int n, int columns, char* arrayname );
+产生出来，并放置在一个内部的缓冲区。
+- 去掉了头部和尾部空格。
+- 所有内部空格都被压缩了。
+- 所有注释会被丢弃。
+- 函数体尾部（如 '{'）也会被去除。
+- 类名和范围限定符会被去除（C++ 方法定义）。
+可以拾取更多的原型并收集到同一个缓冲区。
 
-is produced and put in an internal buffer.
-- Leading and trailing whitespaces are removed.
-- All inner whitespaces are squeezed.
-- All comments will be discarded.
-- Trailing parts of the function body (e.g a '{' ) will also be removed.
-- The class name and the scope resolution operator will be removed (C++ method
-  implementations).
-Further prototypes can be picked up and gathered in the buffer.
-
-For C++ methods namespace names and class names will be removed
-(exception: 'std::' ). The first two lines of
+对于 C++ 方法，命令空间的名字和类名都会被删除。（例外: 'std::'）。下列前两行
 
   std::string
   ROBOT::Robot::get_name  ( void )
@@ -657,63 +655,58 @@ For C++ methods namespace names and class names will be removed
     return type_name;
   }   /* -----  end of method Robot::get_name  ----- */
 
-result in the prototype
+会得到原型
 
   std::string get_name ( void );
 
-Folding may help picking up prototypes (see |csupport-folding|).
+代码折叠有利于原型拾取（见 |csupport-folding|）。
 
 
-INSERT PROTOTYPES
-With 'Snippets -> insert prototype(s)' all picked up prototypes currently in
-the buffer will be inserted below the cursor.
-The prototype buffer will be cleared after insertion.
+插入原型
+随着 'Snippets -> insert prototype(s)'，所有当前缓冲区中拾取的原型会被插入到
+光标后。
+原型缓冲区会在插入后清空。
 
 
-DISCARD PROTOTYPES
-The prototype buffer can be cleared with 'Snippets -> clear prototype(s)' .
+丢弃原型
+随着 'Snippets -> clear prototype(s)'，原型缓冲区将会被清空。
 
 
-SHOW PROTOTYPES
-The list of gathered prototypes can be shown with
-'Snippets -> show prototype(s)'. The number and the filename are shown, e.g.
+展现原型
+收集的原型列表由 'Snippets -> show prototype(s)' 展现。序号和文件名都会被显示。
+如:
 
   (1) matrix.c #  double** calloc_double_matrix ( int rows, int columns );
   (2) matrix.c #  void free_double_matrix ( double **m );
   (3) foomain.c #  void foo ( );
 
 
-REMARK. Generating prototypes this way is nice in a small project. You may
-want to use an extractor like cextract or something else.
+注意。产生原型这种方式在小项目中很好。你可能想用一个像 cextract 或其它之类的
+提取器。
 
 
-1.5.3  Code Templates                                *csupport-templates-menu*
+1.5.3  代码模板                                      *csupport-templates-menu*
 ---------------------
-Nearly all menu entries insert code snippets or comments. All these stuff is
-taken from template files and can be changed by the user to meet his
-requirements (see|csupport-templates|on how to use the template system).
+几乎所有的目录都插入代码片断或注释。所有这些东西都是从模板文件中读取，并且可以
+由用户修改以满足他的需求（见 |csupport-templates| 如何使用模板系统）。
 
-The menu item 'edit local templates' opens the main template file in a local
-plugin installation. This is usually the file
-'~/.vim/c-support/templates/Templates'.  There may be dependent files
-loaded from the main file.  Now change whatever file you want, save it, and
-click on the menu item 'reread templates' to read in the file(s) and to
-rebuild the internal representation of the templates.
+菜单项 'edit local templates' 会打开本地插件安装目录中的主模板文件。
+通常是 '~/.vim/c-support/templates/Templates'。这取决于从主文件中加载的文件。
+现在，修改你想改的任何文件并保存，然后点击菜单项 'reread templates' 读取文件，
+来重建模板的内部表现。
 
-The menu item 'edit global templates' opens the main template file in a
-system-wide plugin installation (see |csupport-system-wide|). This is
-usually the file '$VIM./vimfiles/c-support/templates/Templates'.
+菜单项 'edit global templates' 会打开系统插件安装目录中的主模板文件。（见
+|csupport-system-wide|）。通常是 '$VIM./vimfiles/c-support/templates/Templates'.
 
-Template browser
+模板浏览器
 ----------------
-Under a GUI a file requester will be put up. Without GUI the filename will be
-read from the command line. You can change this behavior by setting a global
-variable in your ~/.vimrc :
+在 GUI 下会提供一个打开文件对话框。没有 GUI 则会从命令行读取文件名。你可以通过
+在你的 ~.vimrc 中设置一个全局变量来改变这个行为:
 
  let g:C_GuiTemplateBrowser = 'explorer'
 
-The default value is 'gui'. 'explorer' will start the file explorer
-(see help|:Explore|). To use the commandline asign 'commandline'.
+默认值为 'gui'。 'explorer' 会打开一个文件浏览器（见帮助 |:Explore|）。使用命令
+行则设置为 'commandline'。
 
 ------------------------------------------------------------------------------
 1.6  MENU 'C++'                                                 *csupport-c++*
