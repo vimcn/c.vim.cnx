@@ -52,7 +52,7 @@ Vim/gVim 的 C/C++-IDE。开发它是为了极为迅速地以一致的风格来�
  1.7.5   运行 make clean                        |csupport-run-make-clean|
  1.7.6   make 命令行参数                        |csupport-run-make-args|
  1.7.7   Splint                                 |csupport-run-splint|
- 1.7.8   代码检查                               |csupport-run-codecheck|
+ 1.7.8   CodeCheck                              |csupport-run-codecheck|
  1.7.9   缩进                                   |csupport-run-indent|
  1.7.10  硬拷贝                                 |csupport-run-hardcopy|
  1.7.11  重新构建模板                           |csupport-run-templates|
@@ -102,7 +102,7 @@ Vim/gVim 的 C/C++-IDE。开发它是为了极为迅速地以一致的风格来�
 用户修改以达到他们的需求（参见|csupport-templates|）。
 
 ------------------------------------------------------------------------------
-1.1 'Comments' 目录                                            *csupport-comm*
+1.1 'Comments' 菜单                                            *csupport-comm*
 ------------------------------------------------------------------------------
 
 1.1.1  在连续行中追加已对齐的注释                      *csupport-comm-aligned*
@@ -145,10 +145,10 @@ Vim/gVim 的 C/C++-IDE。开发它是为了极为迅速地以一致的风格来�
 
 在一些改动后，行尾注释可能不再整齐了:
 
-  print_double_array ( double       array[],          /*  */
-                       long int     n,                     /*  */
-                       unsigned int columns,          /*  */
-                       char*        a_name         /*  */
+  print_double_array ( double       array[],    /*  */
+                       long int     n,          /*  */
+                       unsigned int columns,    /*  */
+                       char*        a_name      /*  */
                        )                        /*  */
 
 使用菜单项 'adjust end-of-line com.' 可以实现重新对齐。 在正常模式下，当前行的
@@ -164,9 +164,9 @@ Vim/gVim 的 C/C++-IDE。开发它是为了极为迅速地以一致的风格来�
 只有前导空格的注释不会重新对齐，它们通常都是标题:
 
   max = other.max;                    /* the maximum value */
-  len = other.len;                         /* the length        */
+  len = other.len;                    /* the length        */
   /* ===== the next section ===== */
-  pos = (x+y+z)/3.0;             /* the next position */
+  pos = (x+y+z)/3.0;                  /* the next position */
 
 在对齐之后:
 
@@ -518,7 +518,7 @@ xxxxx
 列表或是键入一个空格和几个首字符以减小这个列表。
 
 ------------------------------------------------------------------------------
-1.4  'Idioms' 目录                                           *csupport-idioms*
+1.4  'Idioms' 菜单                                           *csupport-idioms*
 ------------------------------------------------------------------------------
 
 1.4.1  'function' 项                                *csupport-idioms-function*
@@ -539,7 +539,7 @@ for 循环: 高亮行会放在花括号内。
 1.4.2  for 循环控制                               *csupport-idioms-for-loop*
 
 菜单项 'for( x=0; ... )' 和 'for( x=n-1; ... )' 可以用来为 for 循环的正向或
-反向计数写一个控制语句。这些目录项会打开一个输入对话框
+反向计数写一个控制语句。这些菜单项会打开一个输入对话框
 
  [TYPE (expand)] VARIABLE [START [END [INCR.]]] :
 
@@ -585,7 +585,7 @@ for 循环: 高亮行会放在花括号内。
 Makefile 的完全模板）。
 文件名是用于区分这些代码片断。片断目录在安装过程中创建（默认值为
 $HOME/.vim/codesnippets-c）。
-片断由 Snippets 子目录下的 3 个目录项管理。
+片断由 Snippets 子菜单下的 3 个菜单项管理。
 
    C/C++ -> Snippets -> read  code snippet
    C/C++ -> Snippets -> write code snippet
@@ -644,7 +644,7 @@ $HOME/.vim/codesnippets-c）。
 - 所有内部空格都被压缩了。
 - 所有注释会被丢弃。
 - 函数体尾部（如 '{'）也会被去除。
-- 类名和范围限定符会被去除（C++ 方法定义）。
+- 类名和范围解析符会被去除（C++ 方法定义）。
 可以拾取更多的原型并收集到同一个缓冲区。
 
 对于 C++ 方法，命令空间的名字和类名都会被删除。（例外: 'std::'）。下列前两行
@@ -687,8 +687,8 @@ $HOME/.vim/codesnippets-c）。
 
 1.5.3  代码模板                                      *csupport-templates-menu*
 ---------------------
-几乎所有的目录都插入代码片断或注释。所有这些东西都是从模板文件中读取，并且可以
-由用户修改以满足他的需求（见 |csupport-templates| 如何使用模板系统）。
+几乎所有的菜单入口都插入代码片断或注释。所有这些东西都是从模板文件中读取，并且
+可以由用户修改以满足他的需求（见 |csupport-templates| 如何使用模板系统）。
 
 菜单项 'edit local templates' 会打开本地插件安装目录中的主模板文件。
 通常是 '~/.vim/c-support/templates/Templates'。这取决于从主文件中加载的文件。
@@ -709,13 +709,13 @@ $HOME/.vim/codesnippets-c）。
 行则设置为 'commandline'。
 
 ------------------------------------------------------------------------------
-1.6  MENU 'C++'                                                 *csupport-c++*
+1.6  'C++' 菜单                                                 *csupport-c++*
 ------------------------------------------------------------------------------
 
-1.6.1  NORMAL MODE, INSERT MODE.                    *csupport-c++-normal-mode*
+1.6.1  正常模式，插入模式。                         *csupport-c++-normal-mode*
 
-An empty statement will be inserted and in some cases properly indented. The
-item 'try .. catch' will insert the following lines:
+将会插入一个空语句，在某些情况下会正常的缩进。菜单项 'try .. catch' 将插入
+以下行:
 
   try {
   }
@@ -724,11 +724,11 @@ item 'try .. catch' will insert the following lines:
   catch (...) {   // handle exception: unspecified
   }
 
-The cursor will go into the try block.
+光标将会在 try 区块。
 
-1.6.2  VISUAL MODE.                                 *csupport-c++-visual-mode*
+1.6.2  可视模式。                                   *csupport-c++-visual-mode*
 
-The highlighted area can be surrounded by one of the following statements:
+高亮区域将会被下列语句之一所环绕:
 
   try - catch
   catch
@@ -736,176 +736,153 @@ The highlighted area can be surrounded by one of the following statements:
   namespace { }
   extern "C" { }
 
-The whole statement will be indented after insertion.
+整个语句将会在插入后缩进。
 
-1.6.3   METHOD IMPLEMENTATION                       *csupport-c++-method-impl*
+1.6.3   方法实现                                    *csupport-c++-method-impl*
 
-The menu item 'method implement.' asks for a method name. If this item is
-called the first time you will see just an scope resolution operator.  If you
-specify the scope this is used the next time you call this item.  If you use
-one of the menu items to generate a class (see |csupport-templates|) the
-scope will be extracted and used for the next method.
+菜单项 'method implement.' 要求提供一个方法名。如果是第一次调用，你将会看到一个
+范围解析符。如果你指定了范围，它将会在下次调用时乃至。如果你使用了其中的一个
+菜单项来产生一个类（见 |csupport-templates|），这个范围将会被提取并用于下一个
+方法。
 
-1.6.4  EX COMMANDS                                           *csupport-c++-ex*
+1.6.4  外部命令                                              *csupport-c++-ex*
 
-There are 4 additional Ex command which can be used to insert include
-statements. Please see |csupport-prep-ex|.
+一共有 4 个外部命令可以用来插入 include 语句。见 |csupport-prep-ex|.
 
 ------------------------------------------------------------------------------
-1.7  MENU 'Run'                                                 *csupport-run*
+1.7  'Run' 菜单                                                 *csupport-run*
 ------------------------------------------------------------------------------
 
-1.7.1  MINIMAL MAKE FUNCTIONALITY                        *csupport-run-buffer*
+1.7.1  最小 MAKE 功能                                    *csupport-run-buffer*
 
-The 'Run' menu provides a minimal make functionality for single file projects
-(e.g. in education) :
+'Run' 菜单为单文件项目提供了一个最小 make 功能（如: 在教学中）:
 
-SAVE AND COMPILE
-'save and compile' saves the buffer and run the compiler with the given
-options (see |csupport-custom-glob-vars|).
+保存和编译
+'save and compile' 保存缓冲区，以给定的选项运行编译器
+（见 |csupport-custom-glob-vars|）。
 
-An error window will be opened if the compiler reports errors and/or warnings.
-Quickfix commands can now be used to jump to an error location.
+如果编译器报告了错误或警告，会打开一个错误显示窗口。这时，Quickfix 命令可以用于
+跳转到一个错误产生的位置。
 
-Consider using maps like
+请考虑在你的 ~/.vimrc 文件中使用类似映射
   map  <silent> <F7>    <Esc>:cprevious<CR>
   map  <silent> <F8>    <Esc>:cnext<CR>
-in your ~/.vimrc file to jump over the error locations and make navigation
-easier.  The error list and the error locations in your source buffer will be
-synchronized.
+跳过错误的位置，便导航更加容易。错误列表和错误位置会在源文件缓冲区中保持同步。
 
-The filename extension for an object file can be set in ~.vimrc :
+
+
+目标文件的扩展名可以在 ~.vimrc 中设置:
 
   let g:C_ObjExtension = '.obj'
 
-The default is '.o' ('.obj' for Windows).
+默认为 '.o'（'.obj' 适用于 Windows）。
 
-LINK
-'link' makes an executable from the current buffer. If the buffer is not
-saved, or no object is available or the object is older then the source step
-'save and compile' is executed first.
-The linkging will only be tried if the current buffer contains a main
-function.
+链接
+'link' 从当前缓冲区创建一个可执行程序。如果缓冲区没有保存，或者没有可用目标文件
+或者目标文件早于源文件，则首先执行 'save and compile'。
+只有当前缓冲区里包含一个 main 函数，才会尝试进行链接。
 
-The behavior of the compiler / linker is determined by the options assigned to
-the variables described in |csupport-custom-glob-vars| (4.group).
+编译器 / 链接器的行为取决于对选项的赋值，选项描述见 |csupport-custom-glob-vars|
+（第三组）。
 
-RUN
-'run' runs the executable with the same name  as the current buffer. If the
-buffer is not saved, or no executable is available or the executable is older
-then the source steps 'save and compile' and 'link' are executed first.
+运行
+'run' 执行与当前缓冲区名字相同的可执行程序。如果缓冲区没有保存，或都没有可执行
+文件，或者可执行程序早于源文件，则首先执行 'save and compile' 和 'link'。
 
-The filename extension for an executable can be set in ~.vimrc :
+可执行程序的扩展名可以在 ~.vimrc 中设置:
 
   let g:C_ExeExtension = '.exe'
 
-The default is the empty string.
+默认是空字符串。
 
-1.7.2  COMMAND LINE ARGUMENTS                      *csupport-run-cmdline-args*
+1.7.2  命令行参数                                  *csupport-run-cmdline-args*
 
-The item 'command line arguments' calls an input dialog which asks for command
-line arguments. These arguments are forwarded to the program which is run by
-the 'run' item. The arguments are kept until you change them.
-For the first and only the first argument file name expansion will work (use
-the Tab-key). Only the first string of the input can be expanded due to a
-restriction of the Vim input function. To expand two or more filenames
-specify them in reverse order: type the first characters of the last filename
-and expand them. Go to the start of the input and type the beginning of the
-last but one filename and expand it.
+菜单项 'command line arguments' 调用一个输入对话框来请求命令行参数。这些参数会
+被转发到由菜单项 'run' 运行的程序。除非你改变，否则参数会一直保留。
+对于第一个并且是唯一的参数时，将会进行文件名扩展（使用 <Tab> 键）。由于 Vim
+输入功能的限制，只有输入的第一个字符串才会被扩展。如果要扩展两个或更多的文件名
+，可以按倒序来指定它们: 输入最后一个文件名的首字符并扩展，回到输入的起点，输入
+倒数第二个文件名的开始并扩展它。
 
-The arguments belong to the current buffer (that is, each buffer can have its
-own arguments).
-If the buffer gets a new name with "save as" the arguments will now belong to
-the buffer with the new name.
+该参数属于当前的缓冲区（也就是说，每个缓冲区都能有自己的参数）。
+如果缓冲区通过 "save as" 得到一个新名字，参数将会属于使用新名字的缓冲区。
 
-The command line arguments can be followed by pipes and redirections:
+命令行参数可以带有管道符和重定向符:
 
   11 22 | sort -rn | head -10 > out
 
-Caveat: If you look for the current arguments by calling this menu item again
-be sure to leave it with a CR (not Esc !). Due to a limitation of an internal
-Vim function CR will keep the arguments, Esc will discard them.
+警告: 如果你想通过再次调用这个菜单项来查看当前参数，请确保离开时使用回车（而
+不是 Esc !）。由于 Vim 函数内部的限制，回车保留参数，Esc 会丢弃它们。
 
 
-1.7.3  RUN make                                            *csupport-run-make*
+1.7.3  运行 make                                           *csupport-run-make*
 
-The item 'make' runs the external make program.  An error window will be
-opened if the compiler or linker reports errors or warnings during the make
-process.  Quickfix commands can now be used to jump to an error location.
+菜单项 'make' 运行外部的 make 程序。如果编译器或链接器在 make 过程中报告错误或
+警告，将会打开一个错误窗口。Quickfix 命令可以用于跳转到一个错误位置。
 
-When inside a makefile the hotkeys \rm, \rmc , and \rma are working (see
-|csupport-usage-vim|).
-The snippets collection contains a sample makefile which can easily adepted
-for small projcts.
+当位于一个 makefile 中，快捷键 \rm，\rmc，和 \rma 都是可用的（见
+|csupport-usage-vim|）。
+代码片断集合中包含了一个简单的 makefile，可以简单适用于小项目。
+1.7.4  运行可执行程序                                  *csupport-run-make-run*
 
-1.7.4  EXECUTABLE TO RUN                               *csupport-run-make-run*
+菜单项 'executable to run' 要求提供由 make 创建的可执行程序的名字。如果给定的
+名字不为空，可执行程序将由菜单项 'run'（\rr，C-F9）来运行。
+调用 'excutable to run' 时删除名字将回到默认行为（见 |csupport-run-buffer|）。
 
-The item 'executable to run' asks for the name of the executable built by
-make.  If the name given is nonempty this executable will be run by the menu
-item 'run' (\rr, C-F9).
-To return to the default behavior (see |csupport-run-buffer|) remove the name
-with the another 'executable to run'.
+1.7.5  运行 make clean                               *csupport-run-make-clean*
 
-1.7.5  RUN make clean                                *csupport-run-make-clean*
-
-The item 'make' runs the external make program with the standard target 'clean'.
+菜单项 'make' 使用标准目标 'clean' 运行外部 make 程序 'clean'。
 
 
-1.7.6  COMMAND LINE ARGUMENTS FOR make                *csupport-run-make-args*
+1.7.6  make 的命令行参数                              *csupport-run-make-args*
 
-The item 'command line arguments for make' calls an input dialog which asks
-for command line arguments for make. These arguments are forwarded to make
-when called by the menu item 'make'.
-For the first and only the first argument the file name expansion will work
-(use the Tab-key).
+菜单项 'command line arguments for make' 调用一个输入对话框来请求 make 的命令行
+参数。当 make 被菜单项 'make' 调用时，这些参数将被转发。
+对于第一个并且是唯一的参数，文件名展开是可用的（使用 <Tab>）。
 
 
 1.7.7  SPLINT                                            *csupport-run-splint*
 
-Splint is a tool for statically checking C programs (see http://www.splint.org).
-Of course it has to be installed in order to be used within Vim.  The menu
-item 'Run->splint' will run the current buffer through splint.
+Splint 是一个 C 程序静态检查工具（见 http://www.splint.org）。
+当然它必须是已安装的以便于在 Vim 中使用。菜单项 'Run->splint' 将会通过 splint
+来运行当前缓冲区。
 
-An error window will be opened if splint has something to complain about.
-Quickfix commands can now be used to jump to an error location.  For easier
-navigation see tip under 'SAVE AND COMPILE' |csupport-run-buffer|.
+如果 splint 报错，将会打开一个错误窗口，Quickfix 命令可以用于跳转到错误位置。
+为了更容易地导航，参见 'SAVE AND COMPILE' |csupport-run-buffer| 底下的提示。
 
-Splint has many options. Presumably the best way is to keep the options in an
-option file (~/.splintrc). For a quick try you can use the menu item
-'Run->cmd. line arg. for splint' to specify some buffer related options.
+Splint 有很多选项。意味着将这些选项保存到一个选项文件（~/.splintrc）是最好的
+办法。对于快速尝试，你可以使用菜单项 'Run->cmd. line arg. for splint' 来指定
+一些缓冲区相关选项。
 
-When vim is started this plugin will check whether splint is executable. If
-not, the menu item will *NOT' be visible.
+当 Vim 启动时，这个插件将检测 Splint 是否为可执行程序，如果不是，该菜单项将不会
+显示。
 
 
 1.7.8  CODECHECK                                      *csupport-run-codecheck*
 
-CodeCheck (TM) is a commercial code analyzing tool produced by Abraxas
-Software, Inc.  (www.abraxas-software.com).
-Of course it has to be installed in order to be used within Vim.  The menu
-item 'Run->CodeCheck' will run the current buffer through CodeCheck.
+CodeCheck (TM) 是一个由 Abraxas Software, Inc.  (www.abraxas-software.com) 制作
+的商业代码分析工具。
+当然它必须是已安装的以便于在 Vim 中使用。菜单项 item 'Run->CodeCheck' 将会通过
+CodeCheck 来运行当前缓冲区。
 
-An error window will be opened if CodeCheck has something to complain about.
-Quickfix commands can now be used to jump to an error location.  For easier
-navigation see tip under 'SAVE AND COMPILE' |csupport-run-buffer|.
+如果 CodeCheck 报错，将会打开一个错误窗口，Quickfix 命令可以用于跳转到错误位置。
+为了更容易地导航，参见 'SAVE AND COMPILE' |csupport-run-buffer| 底下的提示。
 
-CodeCheck has many options.  For a quick try you can use the menu item
-'Run->cmd. line arg. for CodeCheck' to specify some buffer related options.
+CodeCheck 有很多选项。对于快速尝试，你可以使用菜单项
+'Run->cmd. line arg. for CodeCheck' 来指定一些缓冲区相关选项。
 
-CodeCheck will be run with default options (see |csupport-custom-glob-vars|).
-The default options can be overwritten by  placing a global variable in
-~/.vimrc , e.g.
+CodeCheck 会使用默认选项启动（见 |csupport-custom-glob-vars|）。默认选项可以
+通过在 ~/.vimrc 中设置一个全局变量来覆盖。如:
 
   let  g:C_CodeCheckOptions = "-K13 -Rmeyers"
 
-The default name for the executable is 'check'.  There are other names in use
-on different platforms.  The name can be changed by placing a global variable
-in ~/.vimrc , e.g.
+默认的可执行程序名字为 'check'。在不同的平台会使用一些其它的名字。可以在
+~/.vimrc 中设置一个全局变量来修改这个名字，如:
 
   let  g:C_CodeCheckExeName = "chknt.exe"
 
-When vim is started this plugin will check whether CodeCheck is executable. If
-not, the menu item will *NOT' be visible.
+当 Vim 启动时，这个插件将检查 CodeCheck 是否为可执行程序，如果不是，该菜单项将
+不会显示。
 
 
 1.7.9  INDENT                                            *csupport-run-indent*
